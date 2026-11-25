@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.local
+*.tsbuildinfo
+test-results/
+.pnpm-store/
+.tools/
+backend/target/
+.env
+.vercel/

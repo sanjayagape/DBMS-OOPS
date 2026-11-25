@@ -1,0 +1,9 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { AnimatePresence, motion } from 'motion/react'
+import { ArrowRight, Leaf, Heart, Users, Utensils } from 'lucide-react'
+import { Logo } from '../components/ui'
+export function Onboarding() {
+  const [step,setStep] = useState(0); const slides = [{ icon:Leaf,title:'A little sharing.\nA lot of good.',text:'Welcome to FoodBridge. A community where extra food becomes a fresh beginning.' },{ icon:Utensils,title:'Good food deserves\na second chance.',text:'Find surplus meals nearby, or share what you have. Every portion has the potential to make someone’s day.' },{ icon:Users,title:'Be someone’s\nlittle bit of good.',text:'Join as a citizen, donor, NGO, or volunteer. Together, we can bring more people to the table.' }]; const slide = slides[step]
+  return <div className="onboarding container"><Logo/><Link className="onboarding-skip" to="/">Skip tour</Link><AnimatePresence mode="wait"><motion.div key={step} className="onboarding-slide" initial={{ opacity:0,y:15 }} animate={{ opacity:1,y:0 }} exit={{ opacity:0,y:-15 }}><div className="onboarding-art"><slide.icon size={80}/><Heart className="onboarding-heart" size={28}/></div><span className="eyebrow">FOOD TODAY. A KINDER TOMORROW.</span><h1>{slide.title}</h1><p>{slide.text}</p></motion.div></AnimatePresence><div className="onboarding-dots">{slides.map((_,i) => <button key={i} className={i === step ? 'active' : ''} aria-label={`Go to welcome step ${i+1}`} aria-current={i === step ? 'step' : undefined} onClick={() => setStep(i)}/>)}</div>{step < 2 ? <button className="button primary" onClick={() => setStep(step+1)}>Continue <ArrowRight size={18}/></button> : <Link className="button primary" to="/register">Find your place in the community <ArrowRight size={18}/></Link>}<small>Frontend demo · No real services connected</small></div>
+}

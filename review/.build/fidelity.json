@@ -1,0 +1,17 @@
+{
+  "reference_sha256": "dab4ebf3f13e9df5845567ec5823213e6be4c83ff498acd3dad7fd9197b03fcb",
+  "changed_source_parts": [
+    "[Content_Types].xml",
+    "word/document.xml",
+    "word/_rels/document.xml.rels",
+    "word/settings.xml",
+    "docProps/core.xml"
+  ],
+  "added_parts": [
+    "word/media/image22.png",
+    "word/media/image23.png",
+    "word/media/image24.png",
+    "word/media/image25.png"
+  ],
+  "intended_pages": 20
+}

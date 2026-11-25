@@ -1,0 +1,12 @@
+.tools/
+.pnpm-store/
+node_modules/
+dist/
+backend/target/
+.env
+.env.*
+.vercel/
+docs/
+presentations/
+review/
+*.tsbuildinfo
