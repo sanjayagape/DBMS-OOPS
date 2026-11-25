@@ -8,3 +8,6 @@ test-results/
 backend/target/
 .env
 .vercel/
+.env*
+!.env.example
+presentations/.review-build/
